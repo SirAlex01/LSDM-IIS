@@ -1,0 +1,14 @@
+SongSpotify campi in sospeso eliminati dalla select value 9, situata dopo Merge T1-T3-T4 Song.
+Campi eliminati temporaneamente per ragioni di compatibilità dei formati:
+ -energy (si prende solo energy_1 della parte T3-T4)
+  energy non c'è nell'output finale, poichè anche rimuovendo i problemi della append togliendo energy da T1, l'output 
+  da problemi uguali nonostante non debba fare append né mergiare nulla
+ -valence (si prende solo valence_1 di T3-T4 per le append e si ignora T1), stessi identici problemi di energy
+
+
+Nota: pentaho non riesce a convertire questi campi né a String né a Number perché ci sono numeri in notazione 
+scientifica tipo 1.51e-05. Tentativi di convertirli tramite script JavaScript hanno avuto successo solo per acousticness. 
+
+
+Note aggiuntive:
+	nell'integrazione ho dovuto usare anche l'album id per integrare le info spotify perchè esistono parecchie canzoni con stesso titolo e album diverso, e ognuna figurava in SpotifyInfo n volte dove n è la quantità di quelle canzoni con stesso titolo. Questo problema è parzialmente risolto dall'uso di album id, ma rimangono canzoni che evidentemente hanno album uguale (probabilmente NULL) con stesso problema. Questo non è necessariamente un problema logico (della nostra possibile mappatura in FOL) ma comunque l'ho riportato per chiarezza.
