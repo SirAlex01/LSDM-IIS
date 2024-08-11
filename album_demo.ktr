@@ -679,16 +679,6 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>CSV file input t3</from>
-      <to>Info T3</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>CSV file input t4</from>
-      <to>Info T4</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Info T1</from>
       <to>SongArtist info T1 </to>
       <enabled>Y</enabled>
@@ -736,11 +726,6 @@
     <hop>
       <from>Sort rows 12</from>
       <to>Merge join 5</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Merge join 5</from>
-      <to>AlbumArtist</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -894,18 +879,8 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Sort rows 32</from>
-      <to>Append streams 3</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Select values 11</from>
       <to>Sort rows 33</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Sort rows 33</from>
-      <to>Append streams 3</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -920,11 +895,6 @@
     </hop>
     <hop>
       <from>Sort rows 34</from>
-      <to>Append streams 4</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Sort rows 35</from>
       <to>Append streams 4</to>
       <enabled>Y</enabled>
     </hop>
@@ -971,21 +941,6 @@
     <hop>
       <from>Sort rows 38</from>
       <to>Merge Id Song SongArtist</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Select Ids SongArtist</from>
-      <to>SongArtist</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Merge Id Song SongArtist</from>
-      <to>removedup songartist</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>removedup songartist</from>
-      <to>Select Ids SongArtist</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -1051,36 +1006,6 @@
     <hop>
       <from>Merge T1-T3-T4 SongArtist</from>
       <to>Select values 9</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>SongArtist info T1 </from>
-      <to>Change acousticness format</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Change acousticness format</from>
-      <to>Select values 17</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>SongArtist info T4</from>
-      <to>Change acousticness format 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Select values 18</from>
-      <to>Filter rows 6</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Change acousticness format 2</from>
-      <to>Select values 18</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Select values 17</from>
-      <to>Sort rows 25</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -1221,6 +1146,111 @@
     <hop>
       <from>Sort rows 13 2</from>
       <to>Merge Song for SpotifyInfo</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>CSV file input t4 2</from>
+      <to>Modified JavaScript value</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Modified JavaScript value</from>
+      <to>Select values 4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 4</from>
+      <to>Info T4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SongArtist info T4</from>
+      <to>Filter rows 6</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 32</from>
+      <to>Append streams 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 33</from>
+      <to>Append streams 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>CSV file input t3</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>Info T3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 35</from>
+      <to>Append streams 4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SongArtist info T1 </from>
+      <to>Sort rows 25</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 14</from>
+      <to>SongArtist</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Merge Id Song SongArtist</from>
+      <to>Select Ids SongArtist</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select Ids SongArtist</from>
+      <to>removedup songartist</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>removedup songartist</from>
+      <to>Sort rows 14</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Divide Flow</from>
+      <to>Album SQL</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add sequence</from>
+      <to>Artist SQL</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Merge join 5</from>
+      <to>Unique rows (HashSet)</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique rows (HashSet)</from>
+      <to>AlbumArtist</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique rows (HashSet)</from>
+      <to>AlbumArtist SQL</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add sequence 3</from>
+      <to>Song SQL</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 14</from>
+      <to>SongArtist SQL</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -1552,7 +1582,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>2592</xloc>
+      <xloc>2688</xloc>
       <yloc>1520</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1916,7 +1946,7 @@
     <enclosure>"</enclosure>
     <header>Y</header>
     <buffer_size>50000</buffer_size>
-    <lazy_conversion>Y</lazy_conversion>
+    <lazy_conversion>N</lazy_conversion>
     <add_filename_result>N</add_filename_result>
     <parallel>N</parallel>
     <newline_possible>N</newline_possible>
@@ -1969,8 +1999,8 @@
       </field>
       <field>
         <name>added</name>
-        <type>String</type>
-        <format/>
+        <type>Date</type>
+        <format>yyyyâ€‘MMâ€‘dd</format>
         <currency>€</currency>
         <decimal>,</decimal>
         <group>.</group>
@@ -1980,8 +2010,8 @@
       </field>
       <field>
         <name>bpm</name>
-        <type>Integer</type>
-        <format>#</format>
+        <type>Number</type>
+        <format>#.##########</format>
         <currency>€</currency>
         <decimal>,</decimal>
         <group>.</group>
@@ -1991,8 +2021,8 @@
       </field>
       <field>
         <name>nrgy</name>
-        <type>Integer</type>
-        <format>#</format>
+        <type>Number</type>
+        <format>#.##########</format>
         <currency>€</currency>
         <decimal>,</decimal>
         <group>.</group>
@@ -2002,8 +2032,8 @@
       </field>
       <field>
         <name>dnce</name>
-        <type>Integer</type>
-        <format>#</format>
+        <type>Number</type>
+        <format>#.##########</format>
         <currency>€</currency>
         <decimal>,</decimal>
         <group>.</group>
@@ -2013,8 +2043,8 @@
       </field>
       <field>
         <name>dB</name>
-        <type>Integer</type>
-        <format>#</format>
+        <type>Number</type>
+        <format>#.##########</format>
         <currency>€</currency>
         <decimal>,</decimal>
         <group>.</group>
@@ -2024,8 +2054,8 @@
       </field>
       <field>
         <name>live</name>
-        <type>Integer</type>
-        <format>#</format>
+        <type>Number</type>
+        <format>#.##########</format>
         <currency>€</currency>
         <decimal>,</decimal>
         <group>.</group>
@@ -2035,8 +2065,8 @@
       </field>
       <field>
         <name>val</name>
-        <type>Integer</type>
-        <format>#</format>
+        <type>Number</type>
+        <format>#.##########</format>
         <currency>€</currency>
         <decimal>,</decimal>
         <group>.</group>
@@ -2046,7 +2076,7 @@
       </field>
       <field>
         <name>dur</name>
-        <type>Integer</type>
+        <type>Number</type>
         <format>#</format>
         <currency>€</currency>
         <decimal>,</decimal>
@@ -2057,8 +2087,8 @@
       </field>
       <field>
         <name>acous</name>
-        <type>Integer</type>
-        <format>#</format>
+        <type>Number</type>
+        <format>#.##########</format>
         <currency>€</currency>
         <decimal>,</decimal>
         <group>.</group>
@@ -2068,8 +2098,8 @@
       </field>
       <field>
         <name>spch</name>
-        <type>Integer</type>
-        <format>#</format>
+        <type>Number</type>
+        <format>#.##########</format>
         <currency>€</currency>
         <decimal>,</decimal>
         <group>.</group>
@@ -2120,8 +2150,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>240</xloc>
-      <yloc>176</yloc>
+      <xloc>176</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2271,8 +2301,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>896</xloc>
-      <yloc>1184</yloc>
+      <xloc>784</xloc>
+      <yloc>1264</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2295,7 +2325,7 @@
     <enclosure>"</enclosure>
     <header>Y</header>
     <buffer_size>50000</buffer_size>
-    <lazy_conversion>Y</lazy_conversion>
+    <lazy_conversion>N</lazy_conversion>
     <add_filename_result>N</add_filename_result>
     <parallel>N</parallel>
     <newline_possible>N</newline_possible>
@@ -2400,13 +2430,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
+      <xloc>80</xloc>
       <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>CSV file input t4</name>
+    <name>CSV file input t4 2</name>
     <type>CsvInput</type>
     <description/>
     <distribute>N</distribute>
@@ -2424,7 +2454,7 @@
     <enclosure>"</enclosure>
     <header>Y</header>
     <buffer_size>50000</buffer_size>
-    <lazy_conversion>Y</lazy_conversion>
+    <lazy_conversion>N</lazy_conversion>
     <add_filename_result>N</add_filename_result>
     <parallel>N</parallel>
     <newline_possible>N</newline_possible>
@@ -2511,7 +2541,7 @@
       <field>
         <name>Danceability</name>
         <type>Number</type>
-        <format>#.#</format>
+        <format>#.##########</format>
         <currency>€</currency>
         <decimal>.</decimal>
         <group>,</group>
@@ -2521,19 +2551,19 @@
       </field>
       <field>
         <name>Energy</name>
-        <type>Number</type>
-        <format>#.#</format>
+        <type>String</type>
+        <format/>
         <currency>€</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>Key</name>
         <type>Number</type>
-        <format>#.#</format>
+        <format>#</format>
         <currency>€</currency>
         <decimal>.</decimal>
         <group>,</group>
@@ -2544,7 +2574,7 @@
       <field>
         <name>Loudness</name>
         <type>Number</type>
-        <format>#.#</format>
+        <format>#.##########</format>
         <currency>€</currency>
         <decimal>.</decimal>
         <group>,</group>
@@ -2555,7 +2585,7 @@
       <field>
         <name>Speechiness</name>
         <type>Number</type>
-        <format>#.#</format>
+        <format>#.##########</format>
         <currency>€</currency>
         <decimal>.</decimal>
         <group>,</group>
@@ -2570,7 +2600,7 @@
         <currency>€</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>8</length>
+        <length>15</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -2581,14 +2611,14 @@
         <currency>€</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>8</length>
+        <length>15</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>Liveness</name>
         <type>Number</type>
-        <format>#.#</format>
+        <format>#.##########</format>
         <currency>€</currency>
         <decimal>.</decimal>
         <group>,</group>
@@ -2598,19 +2628,19 @@
       </field>
       <field>
         <name>Valence</name>
-        <type>Number</type>
-        <format>#.#</format>
+        <type>String</type>
+        <format/>
         <currency>€</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>Tempo</name>
         <type>Number</type>
-        <format>#.#</format>
+        <format>#.##########</format>
         <currency>€</currency>
         <decimal>.</decimal>
         <group>,</group>
@@ -2621,7 +2651,7 @@
       <field>
         <name>Duration_ms</name>
         <type>Number</type>
-        <format>#.#</format>
+        <format>#</format>
         <currency>€</currency>
         <decimal>.</decimal>
         <group>,</group>
@@ -2665,7 +2695,7 @@
       <field>
         <name>Views</name>
         <type>Number</type>
-        <format>#.#</format>
+        <format>#</format>
         <currency>€</currency>
         <decimal>.</decimal>
         <group>,</group>
@@ -2676,7 +2706,7 @@
       <field>
         <name>Likes</name>
         <type>Number</type>
-        <format>#.#</format>
+        <format>#</format>
         <currency>€</currency>
         <decimal>.</decimal>
         <group>,</group>
@@ -2687,7 +2717,7 @@
       <field>
         <name>Comments</name>
         <type>Number</type>
-        <format>#.#</format>
+        <format>#</format>
         <currency>€</currency>
         <decimal>.</decimal>
         <group>,</group>
@@ -2749,146 +2779,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
+      <xloc>80</xloc>
       <yloc>656</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Change acousticness format</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>
-      <jsScript>
-        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var originalValue = acousticness; 
-
-// Convert the value to binary format
-function convertToBinary(value) {
-    if (typeof value === 'string' &amp;&amp; value.toLowerCase().includes('e')) {
-       
-        var floatValue = parseFloat(value);
-        var binaryString = '';
-        while (floatValue >= 1) {
-            binaryString = (floatValue % 2) + binaryString;
-            floatValue = Math.floor(floatValue / 2);
-        }
-
-        while (binaryString.length &lt; 8) {
-            binaryString = '0' + binaryString;
-        }
-        return binaryString;
-    } else {
-        return value;
-    }
-}
-
-// Set the new value for the binary field
-var binaryFieldValue = convertToBinary(originalValue);
-acousticness = binaryFieldValue; 
-</jsScript_script>
-      </jsScript>
-    </jsScripts>
-    <fields>
-      <field>
-        <name>acousticness</name>
-        <rename>acousticness</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1168</xloc>
-      <yloc>1024</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Change acousticness format 2</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>
-      <jsScript>
-        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var originalValue = acousticness; 
-
-// Convert the value to binary format
-function convertToBinary(value) {
-    if (typeof value === 'string' &amp;&amp; value.toLowerCase().includes('e')) {
-       
-        var floatValue = parseFloat(value);
-        var binaryString = '';
-        while (floatValue >= 1) {
-            binaryString = (floatValue % 2) + binaryString;
-            floatValue = Math.floor(floatValue / 2);
-        }
-
-        while (binaryString.length &lt; 8) {
-            binaryString = '0' + binaryString;
-        }
-        return binaryString;
-    } else {
-        return value;
-    }
-}
-
-// Set the new value for the binary field
-var binaryFieldValue = convertToBinary(originalValue);
-acousticness = binaryFieldValue; 
-</jsScript_script>
-      </jsScript>
-    </jsScripts>
-    <fields>
-      <field>
-        <name>acousticness</name>
-        <rename>acousticness</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>672</xloc>
-      <yloc>752</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -3380,6 +3272,23 @@ acousticness = binaryFieldValue;
         <name>added</name>
       </field>
       <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>added</name>
+        <rename>added</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>dd/MM/yyyy</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -3642,11 +3551,9 @@ acousticness = binaryFieldValue;
     <step2>Sort rows 26</step2>
     <keys_1>
       <key>artist</key>
-      <key>artist type</key>
     </keys_1>
     <keys_2>
       <key>artist</key>
-      <key>artist type</key>
     </keys_2>
     <attributes/>
     <cluster_schema/>
@@ -3882,7 +3789,7 @@ acousticness = binaryFieldValue;
     <name>Merge join 3</name>
     <type>MergeJoin</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -3991,7 +3898,7 @@ acousticness = binaryFieldValue;
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <join_type>INNER</join_type>
+    <join_type>RIGHT OUTER</join_type>
     <step1>Sort rows 44</step1>
     <step2>Sort rows 45</step2>
     <keys_1>
@@ -4011,6 +3918,96 @@ acousticness = binaryFieldValue;
     <GUI>
       <xloc>3056</xloc>
       <yloc>768</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Modified JavaScript value</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>// Funzione per convertire il valore
+function convertToNumber(value) {
+    // Verifica se il valore è numerico o in notazione scientifica
+    if (/^[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?$/.test(value)) {
+        return parseFloat(value);
+    } else {
+        // Gestisci i valori non numerici se necessario
+        return null; // Puoi anche restituire 0 o un valore predefinito se preferisci
+    }
+}
+
+// Applica la funzione ai quattro campi
+var energyConverted = convertToNumber(Energy);
+var valenceConverted = convertToNumber(Valence);
+var acousticnessConverted = convertToNumber(Acousticness);
+var instrumentalnessConverted = convertToNumber(Instrumentalness);
+
+// Restituisci i valori convertiti
+energyConverted; // Questo sarà l'output per il campo "Energy"
+valenceConverted; // Questo sarà l'output per il campo "Valence"
+acousticnessConverted; // Questo sarà l'output per il campo "Acousticness"
+instrumentalnessConverted; // Questo sarà l'output per il campo "Instrumentalness"
+</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>energyConverted</name>
+        <rename>energyConverted</rename>
+        <type>Number</type>
+        <length>15</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>valenceConverted</name>
+        <rename>valenceConverted</rename>
+        <type>Number</type>
+        <length>15</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>acousticnessConverted</name>
+        <rename>acousticnessConverted</rename>
+        <type>Number</type>
+        <length>15</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>instrumentalnessConverted</name>
+        <rename>instrumentalnessConverted</rename>
+        <type>Number</type>
+        <length>15</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>256</xloc>
+      <yloc>656</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -4320,8 +4317,8 @@ acousticness = binaryFieldValue;
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1680</xloc>
-      <yloc>240</yloc>
+      <xloc>1952</xloc>
+      <yloc>544</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -4442,7 +4439,7 @@ acousticness = binaryFieldValue;
     </remotesteps>
     <GUI>
       <xloc>2416</xloc>
-      <yloc>1008</yloc>
+      <yloc>928</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -4464,63 +4461,48 @@ acousticness = binaryFieldValue;
       </field>
       <field>
         <name>uri</name>
-        <rename/>
       </field>
       <field>
         <name>bpm</name>
-        <rename/>
       </field>
       <field>
         <name>danceability</name>
-        <rename/>
       </field>
       <field>
         <name>loudness</name>
-        <rename/>
       </field>
       <field>
         <name>liveness</name>
-        <rename/>
       </field>
       <field>
         <name>acousticness</name>
-        <rename/>
       </field>
       <field>
         <name>speechiness</name>
-        <rename/>
       </field>
       <field>
         <name>instrumentalness</name>
-        <rename/>
       </field>
       <field>
         <name>key</name>
-        <rename/>
       </field>
       <field>
         <name>duration</name>
-        <rename/>
       </field>
       <field>
         <name>popularity</name>
-        <rename/>
       </field>
       <field>
         <name>explicit</name>
-        <rename/>
       </field>
       <field>
         <name>added</name>
-        <rename/>
       </field>
       <field>
         <name>top year</name>
-        <rename/>
       </field>
       <field>
         <name>streams</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -4567,6 +4549,75 @@ acousticness = binaryFieldValue;
     <GUI>
       <xloc>1456</xloc>
       <yloc>1360</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>id</name>
+      </field>
+      <field>
+        <name>name</name>
+      </field>
+      <field>
+        <name>genre</name>
+      </field>
+      <field>
+        <name>artists</name>
+      </field>
+      <field>
+        <name>album</name>
+      </field>
+      <field>
+        <name>popularity</name>
+      </field>
+      <field>
+        <name>duration_ms</name>
+      </field>
+      <field>
+        <name>explicit</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>duration_ms</name>
+        <rename>duration_ms</rename>
+        <type>Number</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>#</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>256</xloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -4640,23 +4691,6 @@ acousticness = binaryFieldValue;
         <name>streams</name>
       </field>
       <select_unspecified>N</select_unspecified>
-      <meta>
-        <name>duration</name>
-        <rename>duration</rename>
-        <type>String</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -4746,23 +4780,6 @@ acousticness = binaryFieldValue;
         <name>streams</name>
       </field>
       <select_unspecified>N</select_unspecified>
-      <meta>
-        <name>duration</name>
-        <rename>duration</rename>
-        <type>String</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -4925,8 +4942,7 @@ acousticness = binaryFieldValue;
         <name>duration</name>
       </field>
       <field>
-        <name>energy_1</name>
-        <rename>energy</rename>
+        <name>energy</name>
       </field>
       <field>
         <name>explicit</name>
@@ -4953,8 +4969,7 @@ acousticness = binaryFieldValue;
         <name>uri</name>
       </field>
       <field>
-        <name>valence_1</name>
-        <rename>valence</rename>
+        <name>valence</name>
       </field>
       <field>
         <name>added</name>
@@ -5207,166 +5222,6 @@ acousticness = binaryFieldValue;
     </GUI>
   </step>
   <step>
-    <name>Select values 17</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>title</name>
-      </field>
-      <field>
-        <name>year</name>
-      </field>
-      <field>
-        <name>artist</name>
-      </field>
-      <field>
-        <name>artist type</name>
-      </field>
-      <field>
-        <name>genre</name>
-      </field>
-      <field>
-        <name>acousticness_1</name>
-        <rename>acousticness</rename>
-      </field>
-      <field>
-        <name>bpm</name>
-      </field>
-      <field>
-        <name>danceability</name>
-      </field>
-      <field>
-        <name>duration</name>
-      </field>
-      <field>
-        <name>energy</name>
-      </field>
-      <field>
-        <name>liveness</name>
-      </field>
-      <field>
-        <name>loudness</name>
-      </field>
-      <field>
-        <name>popularity</name>
-      </field>
-      <field>
-        <name>speechiness</name>
-      </field>
-      <field>
-        <name>valence</name>
-      </field>
-      <field>
-        <name>added</name>
-      </field>
-      <field>
-        <name>top year</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1360</xloc>
-      <yloc>1024</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Select values 18</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>title</name>
-      </field>
-      <field>
-        <name>artist</name>
-      </field>
-      <field>
-        <name>album</name>
-      </field>
-      <field>
-        <name>album_type</name>
-      </field>
-      <field>
-        <name>acousticness_1</name>
-        <rename>acousticness</rename>
-      </field>
-      <field>
-        <name>bpm</name>
-      </field>
-      <field>
-        <name>danceability</name>
-      </field>
-      <field>
-        <name>duration</name>
-      </field>
-      <field>
-        <name>energy</name>
-      </field>
-      <field>
-        <name>instrumentalness</name>
-      </field>
-      <field>
-        <name>key</name>
-      </field>
-      <field>
-        <name>liveness</name>
-      </field>
-      <field>
-        <name>loudness</name>
-      </field>
-      <field>
-        <name>speechiness</name>
-      </field>
-      <field>
-        <name>uri</name>
-      </field>
-      <field>
-        <name>valence</name>
-      </field>
-      <field>
-        <name>streams</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>848</xloc>
-      <yloc>752</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>Select values 2</name>
     <type>SelectValues</type>
     <description/>
@@ -5505,83 +5360,63 @@ acousticness = binaryFieldValue;
     <fields>
       <field>
         <name>title</name>
-        <rename/>
       </field>
       <field>
         <name>acousticness</name>
-        <rename/>
       </field>
       <field>
         <name>bpm</name>
-        <rename/>
       </field>
       <field>
         <name>danceability</name>
-        <rename/>
       </field>
       <field>
         <name>duration</name>
-        <rename/>
       </field>
       <field>
         <name>energy</name>
-        <rename/>
       </field>
       <field>
         <name>explicit</name>
-        <rename/>
       </field>
       <field>
         <name>instrumentalness</name>
-        <rename/>
       </field>
       <field>
         <name>key</name>
-        <rename/>
       </field>
       <field>
         <name>liveness</name>
-        <rename/>
       </field>
       <field>
         <name>loudness</name>
-        <rename/>
       </field>
       <field>
         <name>popularity</name>
-        <rename/>
       </field>
       <field>
         <name>speechiness</name>
-        <rename/>
       </field>
       <field>
         <name>streams</name>
-        <rename/>
       </field>
       <field>
         <name>top year</name>
-        <rename/>
       </field>
       <field>
         <name>uri</name>
-        <rename/>
       </field>
       <field>
         <name>valence</name>
-        <rename/>
       </field>
       <field>
         <name>added</name>
-        <rename/>
       </field>
       <field>
         <name>genre</name>
-        <rename/>
       </field>
       <field>
         <name>year</name>
-        <rename/>
       </field>
       <field>
         <name>id</name>
@@ -5599,6 +5434,46 @@ acousticness = binaryFieldValue;
     </remotesteps>
     <GUI>
       <xloc>2784</xloc>
+      <yloc>672</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values 21 2 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>title</name>
+      </field>
+      <field>
+        <name>genre</name>
+      </field>
+      <field>
+        <name>year</name>
+      </field>
+      <field>
+        <name>album_id</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2368</xloc>
       <yloc>672</yloc>
       <draw>Y</draw>
     </GUI>
@@ -5635,6 +5510,122 @@ acousticness = binaryFieldValue;
     <GUI>
       <xloc>2016</xloc>
       <yloc>1520</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values 4</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>id</name>
+      </field>
+      <field>
+        <name>Artist</name>
+      </field>
+      <field>
+        <name>Url_spotify</name>
+      </field>
+      <field>
+        <name>Track</name>
+      </field>
+      <field>
+        <name>Album</name>
+      </field>
+      <field>
+        <name>Album_type</name>
+      </field>
+      <field>
+        <name>Uri</name>
+      </field>
+      <field>
+        <name>Danceability</name>
+      </field>
+      <field>
+        <name>energyConverted</name>
+        <rename>Energy</rename>
+      </field>
+      <field>
+        <name>Key</name>
+      </field>
+      <field>
+        <name>Loudness</name>
+      </field>
+      <field>
+        <name>Speechiness</name>
+      </field>
+      <field>
+        <name>acousticnessConverted</name>
+        <rename>Acousticness</rename>
+      </field>
+      <field>
+        <name>instrumentalnessConverted</name>
+        <rename>Instrumentalness</rename>
+      </field>
+      <field>
+        <name>Liveness</name>
+      </field>
+      <field>
+        <name>valenceConverted</name>
+        <rename>Valence</rename>
+      </field>
+      <field>
+        <name>Tempo</name>
+      </field>
+      <field>
+        <name>Duration_ms</name>
+      </field>
+      <field>
+        <name>Url_youtube</name>
+      </field>
+      <field>
+        <name>Title</name>
+      </field>
+      <field>
+        <name>Channel</name>
+      </field>
+      <field>
+        <name>Views</name>
+      </field>
+      <field>
+        <name>Likes</name>
+      </field>
+      <field>
+        <name>Comments</name>
+      </field>
+      <field>
+        <name>Description</name>
+      </field>
+      <field>
+        <name>Licensed</name>
+      </field>
+      <field>
+        <name>official_video</name>
+      </field>
+      <field>
+        <name>Stream</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>384</xloc>
+      <yloc>656</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -5901,432 +5892,13 @@ acousticness = binaryFieldValue;
       <field>
         <name>year</name>
       </field>
+      <field>
+        <name>valence</name>
+      </field>
+      <field>
+        <name>energy</name>
+      </field>
       <select_unspecified>N</select_unspecified>
-      <meta>
-        <name>acousticness</name>
-        <rename>acousticness</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>acousticness_1</name>
-        <rename>acousticness_1</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>added</name>
-        <rename>added</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>album</name>
-        <rename>album</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>bpm</name>
-        <rename>bpm</rename>
-        <type>String</type>
-        <length>15</length>
-        <precision>3</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>bpm_1</name>
-        <rename>bpm_1</rename>
-        <type>String</type>
-        <length>15</length>
-        <precision>3</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>danceability</name>
-        <rename>danceability</rename>
-        <type>String</type>
-        <length>15</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>danceability_1</name>
-        <rename>danceability_1</rename>
-        <type>String</type>
-        <length>15</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>duration</name>
-        <rename>duration</rename>
-        <type>None</type>
-        <length>15</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>duration_1</name>
-        <rename>duration_1</rename>
-        <type>None</type>
-        <length>15</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>explicit</name>
-        <rename>explicit</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>instrumentalness</name>
-        <rename>instrumentalness</rename>
-        <type>None</type>
-        <length>8</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>key</name>
-        <rename>key</rename>
-        <type>None</type>
-        <length>15</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>liveness</name>
-        <rename>liveness</rename>
-        <type>String</type>
-        <length>15</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>liveness_1</name>
-        <rename>liveness_1</rename>
-        <type>String</type>
-        <length>15</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>loudness</name>
-        <rename>loudness</rename>
-        <type>String</type>
-        <length>15</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>loudness_1</name>
-        <rename>loudness_1</rename>
-        <type>String</type>
-        <length>15</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>popularity</name>
-        <rename>popularity</rename>
-        <type>None</type>
-        <length>15</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>popularity_1</name>
-        <rename>popularity_1</rename>
-        <type>None</type>
-        <length>15</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>speechiness</name>
-        <rename>speechiness</rename>
-        <type>String</type>
-        <length>15</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>speechiness_1</name>
-        <rename>speechiness_1</rename>
-        <type>String</type>
-        <length>15</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>streams</name>
-        <rename>streams</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>top year</name>
-        <rename>top year</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>uri</name>
-        <rename>uri</rename>
-        <type>String</type>
-        <length>36</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>valence_1</name>
-        <rename>valence_1</rename>
-        <type>None</type>
-        <length>15</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -6490,7 +6062,7 @@ acousticness = binaryFieldValue;
     </remotesteps>
     <GUI>
       <xloc>2416</xloc>
-      <yloc>1120</yloc>
+      <yloc>1168</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -6598,23 +6170,6 @@ acousticness = binaryFieldValue;
         <name>top year</name>
       </field>
       <select_unspecified>N</select_unspecified>
-      <meta>
-        <name>duration</name>
-        <rename>duration</rename>
-        <type>String</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -7087,6 +6642,188 @@ acousticness = binaryFieldValue;
     <GUI>
       <xloc>2144</xloc>
       <yloc>1520</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort rows 13</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>title</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>genre</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>year</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>album_id</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2032</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort rows 13 2</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>title</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>genre</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>year</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>album_id</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2848</xloc>
+      <yloc>544</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort rows 14</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>song_id</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>artist_id</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2416</xloc>
+      <yloc>1088</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -8216,7 +7953,7 @@ acousticness = binaryFieldValue;
     <name>Sort rows 41</name>
     <type>SortRows</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -8985,19 +8722,10 @@ acousticness = binaryFieldValue;
     <error_description/>
     <fields>
       <field>
-        <name>title</name>
-      </field>
-      <field>
-        <name>genre</name>
-      </field>
-      <field>
         <name>artist_id</name>
       </field>
       <field>
-        <name>title_1</name>
-      </field>
-      <field>
-        <name>genre_1</name>
+        <name>song_id</name>
       </field>
     </fields>
     <attributes/>
@@ -9010,7 +8738,7 @@ acousticness = binaryFieldValue;
     </remotesteps>
     <GUI>
       <xloc>2416</xloc>
-      <yloc>928</yloc>
+      <yloc>1008</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -9123,74 +8851,8 @@ acousticness = binaryFieldValue;
     </GUI>
   </step>
   <step>
-    <name>Sort rows 13</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>title</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-      <field>
-        <name>genre</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-      <field>
-        <name>year</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-      <field>
-        <name>album_id</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>2032</xloc>
-      <yloc>448</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Select values 21 2 2</name>
-    <type>SelectValues</type>
+    <name>Album SQL</name>
+    <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -9199,24 +8861,32 @@ acousticness = binaryFieldValue;
       <method>none</method>
       <schema_name/>
     </partitioning>
+    <connection>PostgresDB</connection>
+    <schema>public</schema>
+    <table>album</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
     <fields>
       <field>
-        <name>title</name>
-        <rename/>
+        <column_name>name</column_name>
+        <stream_name>album</stream_name>
       </field>
       <field>
-        <name>genre</name>
-        <rename/>
+        <column_name>id_album</column_name>
+        <stream_name>id</stream_name>
       </field>
-      <field>
-        <name>year</name>
-        <rename/>
-      </field>
-      <field>
-        <name>album_id</name>
-        <rename/>
-      </field>
-      <select_unspecified>N</select_unspecified>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -9227,14 +8897,138 @@ acousticness = binaryFieldValue;
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1824</xloc>
-      <yloc>240</yloc>
+      <xloc>3344</xloc>
+      <yloc>1168</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Sort rows 13 2</name>
-    <type>SortRows</type>
+    <name>AlbumArtist SQL</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>PostgresDB</connection>
+    <schema>public</schema>
+    <table>albumartist</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>id_album</column_name>
+        <stream_name>id</stream_name>
+      </field>
+      <field>
+        <column_name>id_artist</column_name>
+        <stream_name>artist_id</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2560</xloc>
+      <yloc>1392</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Artist SQL</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>PostgresDB</connection>
+    <schema>public</schema>
+    <table>artist</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>name</column_name>
+        <stream_name>name</stream_name>
+      </field>
+      <field>
+        <column_name>type</column_name>
+        <stream_name>type</stream_name>
+      </field>
+      <field>
+        <column_name>country</column_name>
+        <stream_name>country</stream_name>
+      </field>
+      <field>
+        <column_name>num_listeners</column_name>
+        <stream_name>num_listeners</stream_name>
+      </field>
+      <field>
+        <column_name>num_scrobbles</column_name>
+        <stream_name>num_scrobbles</stream_name>
+      </field>
+      <field>
+        <column_name>is_ambiguous</column_name>
+        <stream_name>is_ambiguous</stream_name>
+      </field>
+      <field>
+        <column_name>id_artist</column_name>
+        <stream_name>id</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1456</xloc>
+      <yloc>1536</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Unique rows (HashSet)</name>
+    <type>UniqueRowsByHashSet</type>
     <description/>
     <distribute>N</distribute>
     <custom_distribution/>
@@ -9243,45 +9037,15 @@ acousticness = binaryFieldValue;
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
+    <store_values>N</store_values>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <error_description/>
     <fields>
       <field>
-        <name>title</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
+        <name>id</name>
       </field>
       <field>
-        <name>genre</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-      <field>
-        <name>year</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-      <field>
-        <name>album_id</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
+        <name>artist_id</name>
       </field>
     </fields>
     <attributes/>
@@ -9293,8 +9057,124 @@ acousticness = binaryFieldValue;
       </output>
     </remotesteps>
     <GUI>
-      <xloc>2848</xloc>
-      <yloc>544</yloc>
+      <xloc>2560</xloc>
+      <yloc>1520</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Song SQL</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>PostgresDB</connection>
+    <schema>public</schema>
+    <table>song</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>id_song</column_name>
+        <stream_name>id</stream_name>
+      </field>
+      <field>
+        <column_name>id_album</column_name>
+        <stream_name>album_id</stream_name>
+      </field>
+      <field>
+        <column_name>title</column_name>
+        <stream_name>title</stream_name>
+      </field>
+      <field>
+        <column_name>genre</column_name>
+        <stream_name>genre</stream_name>
+      </field>
+      <field>
+        <column_name>year</column_name>
+        <stream_name>year</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1536</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>SongArtist SQL</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>PostgresDB</connection>
+    <schema>public</schema>
+    <table>songartist</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>id_song</column_name>
+        <stream_name>song_id</stream_name>
+      </field>
+      <field>
+        <column_name>id_artist</column_name>
+        <stream_name>artist_id</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2560</xloc>
+      <yloc>1088</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
