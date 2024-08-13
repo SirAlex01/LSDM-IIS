@@ -914,16 +914,6 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Merge Id Artist in SongArtist</from>
-      <to>Remove duplicates for idartist</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Remove duplicates for idartist</from>
-      <to>Select values 14</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Select values 14</from>
       <to>Sort rows 37</to>
       <enabled>Y</enabled>
@@ -1253,6 +1243,21 @@
       <to>SongArtist SQL</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Sort rows 41</from>
+      <to>SongSpotify SQL</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Remove duplicates SongYoutubeInfo</from>
+      <to>SongYoutube SQL</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Merge Id Artist in SongArtist</from>
+      <to>Select values 14</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>Add constants</name>
@@ -1456,6 +1461,58 @@
     </GUI>
   </step>
   <step>
+    <name>Album SQL</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>PostgresDB</connection>
+    <schema>public</schema>
+    <table>album</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>name</column_name>
+        <stream_name>album</stream_name>
+      </field>
+      <field>
+        <column_name>id_album</column_name>
+        <stream_name>id</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>3344</xloc>
+      <yloc>1168</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>Album info T3</name>
     <type>SelectValues</type>
     <description/>
@@ -1584,6 +1641,58 @@
     <GUI>
       <xloc>2688</xloc>
       <yloc>1520</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>AlbumArtist SQL</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>PostgresDB</connection>
+    <schema>public</schema>
+    <table>albumartist</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>id_album</column_name>
+        <stream_name>id</stream_name>
+      </field>
+      <field>
+        <column_name>id_artist</column_name>
+        <stream_name>artist_id</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2560</xloc>
+      <yloc>1392</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1776,6 +1885,78 @@
     <GUI>
       <xloc>1456</xloc>
       <yloc>1456</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Artist SQL</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>PostgresDB</connection>
+    <schema>public</schema>
+    <table>artist</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>name</column_name>
+        <stream_name>name</stream_name>
+      </field>
+      <field>
+        <column_name>type</column_name>
+        <stream_name>type</stream_name>
+      </field>
+      <field>
+        <column_name>country</column_name>
+        <stream_name>country</stream_name>
+      </field>
+      <field>
+        <column_name>num_listeners</column_name>
+        <stream_name>num_listeners</stream_name>
+      </field>
+      <field>
+        <column_name>num_scrobbles</column_name>
+        <stream_name>num_scrobbles</stream_name>
+      </field>
+      <field>
+        <column_name>is_ambiguous</column_name>
+        <stream_name>is_ambiguous</stream_name>
+      </field>
+      <field>
+        <column_name>id_artist</column_name>
+        <stream_name>id</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1456</xloc>
+      <yloc>1536</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1994,7 +2175,7 @@
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2016,7 +2197,7 @@
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2027,7 +2208,7 @@
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2038,7 +2219,7 @@
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2049,7 +2230,7 @@
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2060,7 +2241,7 @@
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2071,7 +2252,7 @@
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2082,7 +2263,7 @@
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2093,7 +2274,7 @@
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2104,7 +2285,7 @@
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2115,7 +2296,7 @@
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2126,7 +2307,7 @@
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2395,7 +2576,7 @@
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2406,7 +2587,7 @@
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2469,7 +2650,7 @@
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2546,7 +2727,7 @@
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2568,7 +2749,7 @@
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2579,7 +2760,7 @@
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2590,7 +2771,7 @@
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2623,7 +2804,7 @@
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2645,7 +2826,7 @@
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2656,7 +2837,7 @@
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -2700,7 +2881,7 @@
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -4039,7 +4220,7 @@ instrumentalnessConverted; // Questo sarà l'output per il campo "Instrumentalne
       </output>
     </remotesteps>
     <GUI>
-      <xloc>2160</xloc>
+      <xloc>2320</xloc>
       <yloc>1664</yloc>
       <draw>Y</draw>
     </GUI>
@@ -4355,7 +4536,7 @@ instrumentalnessConverted; // Questo sarà l'output per il campo "Instrumentalne
     <name>Remove duplicates SongYoutubeInfo</name>
     <type>UniqueRowsByHashSet</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -4377,35 +4558,6 @@ instrumentalnessConverted; // Questo sarà l'output per il campo "Instrumentalne
     <GUI>
       <xloc>368</xloc>
       <yloc>1088</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Remove duplicates for idartist</name>
-    <type>UniqueRowsByHashSet</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <store_values>N</store_values>
-    <reject_duplicate_row>N</reject_duplicate_row>
-    <error_description/>
-    <fields>      </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>2112</xloc>
-      <yloc>992</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -6010,6 +6162,70 @@ instrumentalnessConverted; // Questo sarà l'output per il campo "Instrumentalne
     </GUI>
   </step>
   <step>
+    <name>Song SQL</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>PostgresDB</connection>
+    <schema>public</schema>
+    <table>song</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>id_song</column_name>
+        <stream_name>id</stream_name>
+      </field>
+      <field>
+        <column_name>id_album</column_name>
+        <stream_name>album_id</stream_name>
+      </field>
+      <field>
+        <column_name>title</column_name>
+        <stream_name>title</stream_name>
+      </field>
+      <field>
+        <column_name>genre</column_name>
+        <stream_name>genre</stream_name>
+      </field>
+      <field>
+        <column_name>year</column_name>
+        <stream_name>year</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1536</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>SongArtist</name>
     <type>TextFileOutput</type>
     <description/>
@@ -6101,8 +6317,60 @@ instrumentalnessConverted; // Questo sarà l'output per il campo "Instrumentalne
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1696</xloc>
+      <xloc>1824</xloc>
       <yloc>1120</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>SongArtist SQL</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>PostgresDB</connection>
+    <schema>public</schema>
+    <table>songartist</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>id_song</column_name>
+        <stream_name>song_id</stream_name>
+      </field>
+      <field>
+        <column_name>id_artist</column_name>
+        <stream_name>artist_id</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2560</xloc>
+      <yloc>1088</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -8310,6 +8578,42 @@ instrumentalnessConverted; // Questo sarà l'output per il campo "Instrumentalne
     </GUI>
   </step>
   <step>
+    <name>Unique rows (HashSet)</name>
+    <type>UniqueRowsByHashSet</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <store_values>N</store_values>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <error_description/>
+    <fields>
+      <field>
+        <name>id</name>
+      </field>
+      <field>
+        <name>artist_id</name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>2560</xloc>
+      <yloc>1520</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>Youtube Info</name>
     <type>SelectValues</type>
     <description/>
@@ -8323,30 +8627,39 @@ instrumentalnessConverted; // Questo sarà l'output per il campo "Instrumentalne
     <fields>
       <field>
         <name>title</name>
+        <rename/>
       </field>
       <field>
         <name>url</name>
+        <rename/>
       </field>
       <field>
         <name>channel</name>
+        <rename/>
       </field>
       <field>
         <name>views</name>
+        <rename/>
       </field>
       <field>
         <name>likes</name>
+        <rename/>
       </field>
       <field>
         <name>comments</name>
+        <rename/>
       </field>
       <field>
         <name>description</name>
+        <rename/>
       </field>
       <field>
         <name>licensed</name>
+        <rename/>
       </field>
       <field>
         <name>official_video</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -8851,7 +9164,7 @@ instrumentalnessConverted; // Questo sarà l'output per il campo "Instrumentalne
     </GUI>
   </step>
   <step>
-    <name>Album SQL</name>
+    <name>SongSpotify SQL</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -8863,283 +9176,7 @@ instrumentalnessConverted; // Questo sarà l'output per il campo "Instrumentalne
     </partitioning>
     <connection>PostgresDB</connection>
     <schema>public</schema>
-    <table>album</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>name</column_name>
-        <stream_name>album</stream_name>
-      </field>
-      <field>
-        <column_name>id_album</column_name>
-        <stream_name>id</stream_name>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>3344</xloc>
-      <yloc>1168</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>AlbumArtist SQL</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>PostgresDB</connection>
-    <schema>public</schema>
-    <table>albumartist</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>id_album</column_name>
-        <stream_name>id</stream_name>
-      </field>
-      <field>
-        <column_name>id_artist</column_name>
-        <stream_name>artist_id</stream_name>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>2560</xloc>
-      <yloc>1392</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Artist SQL</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>PostgresDB</connection>
-    <schema>public</schema>
-    <table>artist</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>name</column_name>
-        <stream_name>name</stream_name>
-      </field>
-      <field>
-        <column_name>type</column_name>
-        <stream_name>type</stream_name>
-      </field>
-      <field>
-        <column_name>country</column_name>
-        <stream_name>country</stream_name>
-      </field>
-      <field>
-        <column_name>num_listeners</column_name>
-        <stream_name>num_listeners</stream_name>
-      </field>
-      <field>
-        <column_name>num_scrobbles</column_name>
-        <stream_name>num_scrobbles</stream_name>
-      </field>
-      <field>
-        <column_name>is_ambiguous</column_name>
-        <stream_name>is_ambiguous</stream_name>
-      </field>
-      <field>
-        <column_name>id_artist</column_name>
-        <stream_name>id</stream_name>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1456</xloc>
-      <yloc>1536</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Unique rows (HashSet)</name>
-    <type>UniqueRowsByHashSet</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <store_values>N</store_values>
-    <reject_duplicate_row>N</reject_duplicate_row>
-    <error_description/>
-    <fields>
-      <field>
-        <name>id</name>
-      </field>
-      <field>
-        <name>artist_id</name>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>2560</xloc>
-      <yloc>1520</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Song SQL</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>PostgresDB</connection>
-    <schema>public</schema>
-    <table>song</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>id_song</column_name>
-        <stream_name>id</stream_name>
-      </field>
-      <field>
-        <column_name>id_album</column_name>
-        <stream_name>album_id</stream_name>
-      </field>
-      <field>
-        <column_name>title</column_name>
-        <stream_name>title</stream_name>
-      </field>
-      <field>
-        <column_name>genre</column_name>
-        <stream_name>genre</stream_name>
-      </field>
-      <field>
-        <column_name>year</column_name>
-        <stream_name>year</stream_name>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1536</xloc>
-      <yloc>320</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>SongArtist SQL</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>PostgresDB</connection>
-    <schema>public</schema>
-    <table>songartist</table>
+    <table>songspotify</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
@@ -9160,8 +9197,64 @@ instrumentalnessConverted; // Questo sarà l'output per il campo "Instrumentalne
         <stream_name>song_id</stream_name>
       </field>
       <field>
-        <column_name>id_artist</column_name>
-        <stream_name>artist_id</stream_name>
+        <column_name>uri</column_name>
+        <stream_name>uri</stream_name>
+      </field>
+      <field>
+        <column_name>bpm</column_name>
+        <stream_name>bpm</stream_name>
+      </field>
+      <field>
+        <column_name>danceability</column_name>
+        <stream_name>danceability</stream_name>
+      </field>
+      <field>
+        <column_name>loudness</column_name>
+        <stream_name>loudness</stream_name>
+      </field>
+      <field>
+        <column_name>liveness</column_name>
+        <stream_name>liveness</stream_name>
+      </field>
+      <field>
+        <column_name>acousticness</column_name>
+        <stream_name>acousticness</stream_name>
+      </field>
+      <field>
+        <column_name>speechiness</column_name>
+        <stream_name>speechiness</stream_name>
+      </field>
+      <field>
+        <column_name>instrumentalness</column_name>
+        <stream_name>instrumentalness</stream_name>
+      </field>
+      <field>
+        <column_name>key</column_name>
+        <stream_name>key</stream_name>
+      </field>
+      <field>
+        <column_name>duration</column_name>
+        <stream_name>duration</stream_name>
+      </field>
+      <field>
+        <column_name>popularity</column_name>
+        <stream_name>popularity</stream_name>
+      </field>
+      <field>
+        <column_name>explicit</column_name>
+        <stream_name>explicit</stream_name>
+      </field>
+      <field>
+        <column_name>added</column_name>
+        <stream_name>added</stream_name>
+      </field>
+      <field>
+        <column_name>top_year</column_name>
+        <stream_name>top year</stream_name>
+      </field>
+      <field>
+        <column_name>streams</column_name>
+        <stream_name>streams</stream_name>
       </field>
     </fields>
     <attributes/>
@@ -9173,7 +9266,87 @@ instrumentalnessConverted; // Questo sarà l'output per il campo "Instrumentalne
       </output>
     </remotesteps>
     <GUI>
-      <xloc>2560</xloc>
+      <xloc>3280</xloc>
+      <yloc>608</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>SongYoutube SQL</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>PostgresDB</connection>
+    <schema>public</schema>
+    <table>songyoutube</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>id_song</column_name>
+        <stream_name>song_id</stream_name>
+      </field>
+      <field>
+        <column_name>url</column_name>
+        <stream_name>url</stream_name>
+      </field>
+      <field>
+        <column_name>channel</column_name>
+        <stream_name>channel</stream_name>
+      </field>
+      <field>
+        <column_name>views</column_name>
+        <stream_name>views</stream_name>
+      </field>
+      <field>
+        <column_name>likes</column_name>
+        <stream_name>likes</stream_name>
+      </field>
+      <field>
+        <column_name>comments</column_name>
+        <stream_name>comments</stream_name>
+      </field>
+      <field>
+        <column_name>description</column_name>
+        <stream_name>description</stream_name>
+      </field>
+      <field>
+        <column_name>licensed</column_name>
+        <stream_name>licensed</stream_name>
+      </field>
+      <field>
+        <column_name>official_video</column_name>
+        <stream_name>official_video</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>528</xloc>
       <yloc>1088</yloc>
       <draw>Y</draw>
     </GUI>
