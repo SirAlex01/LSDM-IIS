@@ -70,10 +70,10 @@ def fetch_albums_from_db():
     return data_set
 
 # Read the albums from T3.csv
-t3_albums = read_csv('T3.csv', 'album')
+t3_albums = read_csv('../T3.csv', 'album')
 
 # Read the albums from T4.csv where Album_type contains "album"
-t4_albums = read_csv_with_condition('T4.csv', 'Album', 'Album_type', 'album')
+t4_albums = read_csv_with_condition('../T4.csv', 'Album', 'Album_type', 'album')
 
 # Fetch the albums from the PostgreSQL database
 album_db_albums = fetch_albums_from_db()
