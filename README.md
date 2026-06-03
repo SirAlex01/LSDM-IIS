@@ -311,15 +311,15 @@ graph LR
     end
 
     subgraph Pentaho ETL Pipeline
-        A[CSV Input ×4] --> B[Select / Rename Fields]
+        A[CSV Input x4] --> B[Select / Rename Fields]
         B --> C[Sort Rows]
         C --> D[Merge Join on title+artist]
-        D --> E[Filter Rows — overlap cases]
-        E --> F[Unique Rows — deduplication ×13]
-        F --> G[Select Values — project to global schema columns]
+        D --> E[Filter Rows - overlap cases]
+        E --> F[Unique Rows - deduplication x13]
+        F --> G[Select Values - project to global schema columns]
     end
 
-    subgraph Target DB — PostgreSQL
+    subgraph Target DB - PostgreSQL
         G --> H[Table Output: album]
         G --> I[Table Output: artist]
         G --> J[Table Output: song]
